@@ -12,5 +12,5 @@ RUN pip install \
   "flask>=0.10.1" \
   "gunicorn>=19.1.1,<20.0" \
   "python-dateutil>=2.2.0,<2.3.0" \
-  "pgpasslib" \
-  "psycopg2"
+  "pgpasslib>=1.0.1" \
+  "psycopg2>=2.5.4"
