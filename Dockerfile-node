@@ -1,4 +1,12 @@
-FROM node:0.12.2
+FROM node:0.10.38
+
+WORKDIR /app
+RUN npm install \
+  restify@2.8.5 \
+  bunyan@0.22.3 \
+  scrypt@4.0.7 \
+  pg@3.4.5 \
+  nodetime@0.8.15
 
 
 ADD ./start.bash ./snitch.bash /
