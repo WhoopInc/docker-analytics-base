@@ -14,3 +14,8 @@ RUN pip install \
   "python-dateutil>=2.2.0,<2.3.0" \
   "pgpasslib>=1.0.1" \
   "psycopg2>=2.5.4"
+
+ADD ./start.bash ./snitch.bash /
+
+CMD /start.bash
+ONBUILD ADD ./run.bash /

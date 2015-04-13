@@ -1,0 +1,7 @@
+FROM node:0.12.2
+
+
+ADD ./start.bash ./snitch.bash /
+
+CMD /start.bash
+ONBUILD ADD ./run.bash /
