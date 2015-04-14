@@ -31,6 +31,7 @@ RUN cd /usr/src \
     && cp rebar /usr/bin/rebar \
     && cd / && rm -rf /usr/src/rebar-${REBAR_VERSION}
 
+RUN apt-get update && apt-get install -y curl
 
 ADD ./start.bash ./snitch.bash /
 

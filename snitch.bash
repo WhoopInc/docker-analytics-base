@@ -1,5 +1,5 @@
 
 while true; do
-  curl $SNITCH_URL
+  curl -sS $SNITCH_URL >/dev/null
   sleep $SNITCH_SLEEP
 done
