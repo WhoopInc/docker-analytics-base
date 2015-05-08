@@ -33,7 +33,7 @@ RUN cd /usr/src \
     && cd / && rm -rf /usr/src/rebar-${REBAR_VERSION}
 
 RUN mkdir -p /opt \
- && git clone --branch d128bffcddf42b07a25bf61424cc679adadb83f2 --depth 1 https://github.com/rebar/rebar3.git /opt/rebar3 \
+ && git clone --branch master --depth 1 https://github.com/rebar/rebar3.git /opt/rebar3 \
  && cd /opt/rebar3 \
  && ./bootstrap \
  && ln -s /opt/rebar3/rebar3 /usr/bin/rebar3
