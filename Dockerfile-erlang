@@ -12,7 +12,8 @@ RUN DEBIAN_FRONTEND=noninteractive  \
        libssl-dev \
        fop \
        xsltproc \
-       unixodbc-dev
+       unixodbc-dev \
+       curl
 
 ADD http://erlang.org/download/otp_src_${OTP_VERSION}.tar.gz /usr/src/
 RUN cd /usr/src \
@@ -31,7 +32,11 @@ RUN cd /usr/src \
     && cp rebar /usr/bin/rebar \
     && cd / && rm -rf /usr/src/rebar-${REBAR_VERSION}
 
-RUN apt-get update && apt-get install -y curl
+RUN mkdir -p /opt \
+ && git clone --branch d128bffcddf42b07a25bf61424cc679adadb83f2 --depth 1 https://github.com/rebar/rebar3.git /opt/rebar3 \
+ && cd /opt/rebar3 \
+ && ./bootstrap \
+ && ln -s /opt/rebar3/rebar3 /usr/bin/rebar3
 
 ADD ./start.bash ./snitch.bash /
 
