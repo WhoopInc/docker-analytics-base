@@ -1,3 +1,5 @@
+## Notice: this repository is no longer maintained as of 3/26/2024
+
 # Base-container for analytics code #
 
 This Dockerfile installs various slow-to-install dependencies,
